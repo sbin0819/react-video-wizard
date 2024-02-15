@@ -1,4 +1,3 @@
-import { useLocation } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
 
 export const isWithinTimeRange = (time: number, range: [number, number]): boolean => {
@@ -12,8 +11,6 @@ interface VideoControlsProps {
 }
 
 export default function useVideoControls({ fullScreenRef, videoRef, controlsRef }: VideoControlsProps) {
-  const { search } = useLocation()
-
   const [isPlaying, setIsPlaying] = useState(false)
   const [isFullScreen, setIsFullScreen] = useState(false)
 
@@ -136,8 +133,7 @@ export default function useVideoControls({ fullScreenRef, videoRef, controlsRef 
       if (videoElement) {
         const durationTime = videoElement.duration
 
-        const startTimeParam = new URLSearchParams(search).get('t')
-        const startTime = Number(startTimeParam)
+        const startTime = Number(0)
 
         const initialTime = startTime > 0 && startTime <= durationTime ? startTime : 0
 
@@ -160,7 +156,7 @@ export default function useVideoControls({ fullScreenRef, videoRef, controlsRef 
         clearTimeout(timerId)
       }
     }
-  }, [search, videoRef])
+  }, [videoRef])
 
   // play/pause video
   useEffect(() => {
