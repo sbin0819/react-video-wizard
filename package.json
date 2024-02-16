@@ -5,7 +5,7 @@
     "email": "sbinha123@gmail.com"
   },
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.31",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
+import Video from './components/Video'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -41,6 +42,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <Video />
     </>
   )
 }

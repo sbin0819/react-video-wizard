@@ -1,1 +1,1 @@
-# Headless video player for React
+# video player controls for React
